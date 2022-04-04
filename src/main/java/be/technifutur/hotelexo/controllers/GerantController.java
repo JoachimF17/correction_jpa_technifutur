@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/gerant")
 public class GerantController {
 
     private final GerantService service;
@@ -20,12 +21,12 @@ public class GerantController {
         this.service = service;
     }
 
-    @GetMapping("/gerant")
+    @GetMapping
     public List<GerantDTO> getAll(){
         return service.getAll();
     }
 
-    @GetMapping("/gerant/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<Object> getOne(@PathVariable(name = "id") Long id )
     {
         try
@@ -42,7 +43,7 @@ public class GerantController {
         }
     }
 
-    @PostMapping( {"/gerant", "/gerant/add"} )
+    @PostMapping({"","/add"})
     public ResponseEntity<?> insert(@RequestBody  GerantForm form)
     {
         try {
@@ -55,7 +56,7 @@ public class GerantController {
         }
     }
 
-    @PutMapping("/gerant/modifier/{id}")
+    @PutMapping("/modifier/{id}")
     public ResponseEntity<?> update(@PathVariable Long id, @RequestBody GerantForm form)
     {
         try
@@ -69,7 +70,7 @@ public class GerantController {
         }
     }
 
-    @DeleteMapping("/gerant/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable Long id)
     {
         try
