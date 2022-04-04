@@ -64,10 +64,10 @@ public class HotelController
         );
     }
 
-    @GetMapping("/{id}/gerant/modifier")
+    /*@GetMapping("/{id}/gerant/modifier")
     public ResponseEntity<?> updateGerant(@PathVariable Long id, @RequestBody GerantForm form)
     {
         GerantController gerantController;
         return ResponseEntity.ok(gerantController.update(service.getOne(id).getGerant().getId(), form));
-    }
+    }*/
 }

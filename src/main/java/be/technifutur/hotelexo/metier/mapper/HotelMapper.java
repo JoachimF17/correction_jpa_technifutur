@@ -34,6 +34,7 @@ public class HotelMapper
                 .adresse(entity.getAdresse())
                 .nbEtoiles(entity.getNbrEtoile())
                 .gerant(gerant)
+                .chambres(chambres)
                 .build();
 
     }
